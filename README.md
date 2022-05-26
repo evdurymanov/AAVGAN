@@ -1,2 +1,2 @@
 # AAVGAN
-Generating capsids, yes....
+Some adversarial generation of capsid proteins. AAV.
