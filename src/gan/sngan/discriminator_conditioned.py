@@ -21,7 +21,6 @@ class GumbelDiscriminatorCond(Discriminator):
         # Embedding
         embedding_map_bar = self.get_embeddings(shape=[NUM_AMINO_ACIDS, self.dim])
         h = self.embedding_lookup(data, embedding_map_bar)
-        labels1 = labels
 
         # Resnet
         hidden_dim = self.dim
@@ -32,8 +31,7 @@ class GumbelDiscriminatorCond(Discriminator):
             if layer == 0:
                 self.add_attention(h, hidden_dim, reuse)
             if layer == 2:
-                embedding_map_bar = self.get_embeddings(shape=[self.num_classes[0], self.embedding_dimension], name = "LABELS_EMBEDDING")
-                emb = self.embedding_lookup(labels, embedding_map_bar)
+                emb = ops.sn_embedding(labels[0], self.num_classes[0], self.embedding_dimension)
                 H, W = h.shape[2], h.shape[3]
                 emb = tf.broadcast_to(
                     tf.reshape(emb, (emb.shape[0], emb.shape[1], 1, 1)),

@@ -472,6 +472,7 @@ class ConditionalBatchNorm(object):
       self.moving_var = tf.get_variable('var', moving_shape,
                           initializer=tf.ones_initializer(),
                           trainable=False)
+      print(labels)
       beta = tf.gather(self.beta, labels)
       beta = tf.expand_dims(tf.expand_dims(beta, 1), 1)
       gamma = tf.gather(self.gamma, labels)

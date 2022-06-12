@@ -12,7 +12,7 @@ flags.DEFINE_string('dataset', DATASET+ "/capsids",
                     'Dataset to use for training. [mnist, \\wgan\\Length_128_Single cifar10]')
 flags.DEFINE_string('properties_file', "properties.json", 'File name of properties file. [properties.json]')
 flags.DEFINE_string('model_type', MODEL_TYPE, 'Model used for training. [model]')
-flags.DEFINE_integer('batch_size', 64, 'Number of images in input batch. [64]')  # ori 16
+flags.DEFINE_integer('batch_size', 32, 'Number of images in input batch. [64]')  # ori 16
 flags.DEFINE_integer('shuffle_buffer_size', 100000, 'Number of records to load '
                                                     'before shuffling and yielding for consumption. [100000]')
 flags.DEFINE_boolean('is_train', True, 'True for training. [default: True]')
@@ -66,7 +66,7 @@ if DATASET == 'image':
 elif 'protein' in DATASET:
     flags.DEFINE_integer('steps_for_blast', 1200, 'Number of steps between blasting fake protein [1200]')
     flags.DEFINE_bool('one_hot', True, 'Whether to use one hot encoding [False]')
-    flags.DEFINE_integer('embedding_height',58, 'The height of embedding used in generator/discriminator')
+    flags.DEFINE_integer('embedding_height', 10, 'The height of embedding used in generator/discriminator')
     flags.DEFINE_string('embedding_name', 'prot_fp', 'The height of embedding used in generator/discriminator')
     flags.DEFINE_string('pooling', 'conv', 'Pooling [avg, conv, subpixel, None]')
     flags.DEFINE_integer('dilation_rate', 2, 'The rate of the dilation [2]')
