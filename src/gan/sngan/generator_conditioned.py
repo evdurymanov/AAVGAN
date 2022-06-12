@@ -27,9 +27,6 @@ class GumbelGeneratorCond(Generator):
         i_shape = self.initial_shape
         h = ops.snlinear(z, i_shape[1] * i_shape[2] * i_shape[3], name='noise_linear')
         h = tf.reshape(h, i_shape)
-        print("SAAAAAAAAAAAAAAAAAAAAAAAAAAS")
-        tf.get_static_value(labels)
-        print("SAAAAAAAAAAAAAAAAAAAAAAAAAAS")
         # Resnet architecture
         hidden_dim = self.starting_dim
         for layer_id in range(self.number_of_layers):
