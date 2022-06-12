@@ -26,7 +26,7 @@ class Protein(object):
         self.embeddings, self.embeddings_variation = self.get_embedding_data(self.embedding_height, flags)
         self.reactions = self.get_reaction_data(flags)
         self.acid_embeddings = None
-        self.shape = get_shape(flags,properties)
+        self.shape = get_shape(flags, properties)
         add_custom_scalar(logdir)
 
     def get_reaction_data(self, flags):

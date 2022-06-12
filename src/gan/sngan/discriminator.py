@@ -10,6 +10,7 @@ class Discriminator(Model):
             scope_name = "Discriminator"
         super(Discriminator, self).__init__(config, num_classes, scope_name)
         self.dim = config.df_dim
+        self.embedding_dimension = config.embedding_height
         self.act = leaky_relu
         self.input_shape = shape
         self.length = self.input_shape[2]

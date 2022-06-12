@@ -41,7 +41,7 @@ def save_as_tfrecords(filename, data, columns=["sequence"], extension="tfrecords
         with tf.python_io.TFRecordWriter(filename) as writer:
             for index, row in data.iteritems():
                 feature = {
-                    'label': to_int_feature([0])
+                    'label': to_int_feature([int(np.random.randint(2))])
                 }
                 for col_name in columns:
                     value = row
@@ -70,13 +70,15 @@ data.to_csv("combined_nodups_512.csv", sep = "\t")
 data = data[~data["sequence"].str.contains("|".join(NON_STANDARD_AMINO_ACIDS))]
 data = from_amino_acid_to_id(data, "sequence")
 #data.to_csv("vp1_new.csv", sep = "\t")
-save_as_tfrecords('tf_records_comb_cl_512_train', data)
+save_as_tfrecords('temptfrec_train', data)
+
 
 data = fasta_to_pandas('combined_nodups_512_val.fasta')
+
 data = data[~data["sequence"].str.contains("|".join(NON_STANDARD_AMINO_ACIDS))]
 data = from_amino_acid_to_id(data, "sequence")
 #data.to_csv("vp1_new_val.csv", sep = "\t")
-save_as_tfrecords('tf_records_comb_cl_512_val', data)
+save_as_tfrecords('temptfrec_val', data)
 
 
 """

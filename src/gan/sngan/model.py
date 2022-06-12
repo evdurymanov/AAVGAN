@@ -6,6 +6,7 @@ from gan.gan_base_model import GAN
 
 from gan.sngan.discriminator_gumbel import GumbelDiscriminator
 from gan.sngan.generator_gumbel import GumbelGenerator
+from gan.sngan.discriminator_conditioned import GumbelDiscriminatorCond
 
 import tensorflow as tf
 
@@ -188,9 +189,14 @@ class SNGAN(GAN):
         if self.config.architecture == 'resnet':
             discriminator_fn = ResnetDiscriminator(self.config, self.data_handler.shape, self.data_handler.num_classes)
             generator_fn = ResnetGenerator(self.config, self.data_handler.shape, self.data_handler.num_classes)
-        elif self.config.architecture == 'gumbel':
+        elif self.config.architecture == 'gumbel' and self.config.conditioned is False:
             discriminator_fn = GumbelDiscriminator(self.config, self.data_handler.shape, self.data_handler.num_classes)
             generator_fn = GumbelGenerator(self.config, self.data_handler.shape, self.data_handler.num_classes)
+        elif self.config.architecture == 'gumbel' and self.config.conditioned is True:
+            discriminator_fn = GumbelDiscriminatorCond(self.config, self.data_handler.shape,
+                                                       self.data_handler.num_classes)
+            generator_fn = GumbelGenerator(self.config, self.data_handler.shape, self.data_handler.num_classes)
+
         else:
             raise NotImplementedError
 

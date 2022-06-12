@@ -4,19 +4,15 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Python 3.7 (tf1.14) (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="data" />
-    <orderEntry type="module" module-name="congans" />
-    <orderEntry type="module" module-name="weights" />
-    <orderEntry type="module" module-name="PyTorAav" />
   </component>
   <component name="PyDocumentationSettings">
-    <option name="format" value="GOOGLE" />
-    <option name="myDocStringFormat" value="Google" />
+    <option name="format" value="PLAIN" />
+    <option name="myDocStringFormat" value="Plain" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/gan/templates" />
+        <option value="$MODULE_DIR$/src/gan/templates" />
       </list>
     </option>
   </component>

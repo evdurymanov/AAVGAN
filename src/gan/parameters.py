@@ -6,6 +6,8 @@ MODEL_TYPE = 'sngan'
 DATASET = 'protein'
 CURRENT_DIRECTORY = os.path.dirname(__file__)
 
+
+
 flags.DEFINE_string('dataset', DATASET+ "/capsids",
                     'Dataset to use for training. [mnist, \\wgan\\Length_128_Single cifar10]')
 flags.DEFINE_string('properties_file', "properties.json", 'File name of properties file. [properties.json]')
@@ -25,6 +27,7 @@ flags.DEFINE_string('weights_dir', os.path.join(CURRENT_DIRECTORY, '..\..\weight
                     'Location where all weights should be saved')
 flags.DEFINE_string('data_dir', os.path.join(CURRENT_DIRECTORY, '..\..\data'.replace("\\", os.sep)),
                     'Location where all data is stored')
+flags.DEFINE_bool('conditioned', True, 'Using of conditioned GAN')
 
 if MODEL_TYPE == 'sngan':
     flags.DEFINE_float('discriminator_learning_rate', 0.0001, 'Learning rate of for adam. [0.0004]')
