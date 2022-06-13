@@ -17,7 +17,7 @@ from gan.parameters import get_flags
 from gan.protein.helpers import convert_to_acid_ids
 from tensorflow.python.training.monitored_session import ChiefSessionCreator, MonitoredSession
 
-flags.DEFINE_integer('n_seqs', 20, 'Number of sequences to be generated')
+flags.DEFINE_integer('n_seqs', 128, 'Number of sequences to be generated')
 flags.DEFINE_float('stddev', 0.5, 'Standard deviation of noise')
 flags.DEFINE_boolean('use_cpu', False, 'Flags to determine whether to use CPU or not')
 flags.DEFINE_boolean('blast', False, 'Flags to determine whether to add blast results')
@@ -40,7 +40,7 @@ def generate_sequences():
     noise = tf.random.truncated_normal([FLAGS.batch_size, FLAGS.z_dim], stddev=FLAGS.stddev, dtype=tf.float32)
     model = get_model(FLAGS, properties, logdir, noise)
     if FLAGS.one_hot:
-        generated_seqs = tf.squeeze(tf.argmax(model.fake_x, axis=-1))
+        generated_seqs = tf.squeeze(tf.argmax(model.fake_x_to_gen, axis=-1))
     else:
         generated_seqs = convert_to_acid_ids(model.fake_x)
     seqs = []
@@ -50,6 +50,8 @@ def generate_sequences():
     with MonitoredSession(session_creator=session_creator, hooks=None) as session:
         while True:
             results, step = session.run([generated_seqs, tf.train.get_global_step()], None)
+            print(results, step)
+            print("lol")
             id = len(seqs)
             for i in range(FLAGS.batch_size):
                 seqs.append(Sequence(id=id + i, seq=results[i]))

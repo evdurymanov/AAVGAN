@@ -62,7 +62,11 @@ class GAN(object):
         batch = self.data_handler.get_batch(batch_size, config)
         real_x, labels = batch[0], batch[1]
         real_x, labels = self.data_handler.prepare_real_data(real_x, labels)
+
         self.fake_x = self.get_generated_data(self.noise, labels)
+        to_generate = (tf.ones(16, tf.int32), tf.ones(16, tf.float32))
+        self.fake_x_to_gen = self.get_generated_data(self.noise, to_generate)
+        self.labelz = labels
         # real_x_mixed, fake_x_mixed, labels_mixed = self.random_shuffle(real_x, fake_x, labels, self.config.batch_size,
         #                                                                self.config.label_noise_level)
         self.discriminator_real, r_h = self.get_discriminator_result(real_x, labels)
