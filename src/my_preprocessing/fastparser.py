@@ -12,11 +12,12 @@ vp2un = []
 vp3un = []
 
 
-with open("vp1_clean_512.fasta") as in_handle:
+with open("pashas5121024.fasta") as in_handle:
     for title, seq in SimpleFastaParser(in_handle):
         capsid.append(seq)
         capsid_names.append(title)
         capsid_lengths.append(len(seq))
+"""
 with open("capsid_unique.fasta") as in_handle:
     for title, seq in SimpleFastaParser(in_handle):
         capsidun.append(seq)
@@ -32,5 +33,5 @@ with open("vp2_unique.fasta") as in_handle:
 with open("vp3_unique.fasta") as in_handle:
     for title, seq in SimpleFastaParser(in_handle):
         vp3un.append(seq)
-
+"""
 print(len(capsid), sum(capsid_lengths) / len(capsid_lengths))
