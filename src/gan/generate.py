@@ -17,7 +17,7 @@ from gan.parameters import get_flags
 from gan.protein.helpers import convert_to_acid_ids
 from tensorflow.python.training.monitored_session import ChiefSessionCreator, MonitoredSession
 
-flags.DEFINE_integer('n_seqs', 128, 'Number of sequences to be generated')
+flags.DEFINE_integer('n_seqs', 64, 'Number of sequences to be generated')
 flags.DEFINE_float('stddev', 0.5, 'Standard deviation of noise')
 flags.DEFINE_boolean('use_cpu', False, 'Flags to determine whether to use CPU or not')
 flags.DEFINE_boolean('blast', False, 'Flags to determine whether to add blast results')

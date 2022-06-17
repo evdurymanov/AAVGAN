@@ -12,13 +12,13 @@ flags.DEFINE_string('dataset', DATASET+ "/cond_capsids",
                     'Dataset to use for training. [mnist, \\wgan\\Length_128_Single cifar10]')
 flags.DEFINE_string('properties_file', "properties.json", 'File name of properties file. [properties.json]')
 flags.DEFINE_string('model_type', MODEL_TYPE, 'Model used for training. [model]')
-flags.DEFINE_integer('batch_size', 64, 'Number of images in input batch. [64]')  # ori 16
+flags.DEFINE_integer('batch_size', 32, 'Number of images in input batch. [64]')  # ori 16
 flags.DEFINE_integer('shuffle_buffer_size', 100000, 'Number of records to load '
                                                     'before shuffling and yielding for consumption. [100000]')
 flags.DEFINE_boolean('is_train', True, 'True for training. [default: True]')
 flags.DEFINE_integer('kernel_height', 3, 'The height of the kernel [3]')
 flags.DEFINE_integer('kernel_width', 3, 'The width of the kernel [3]')
-flags.DEFINE_integer('steps', 30000, 'Number of steps to train')
+flags.DEFINE_integer('steps', 25000, 'Number of steps to train')
 flags.DEFINE_string('running_mode', 'train', 'Running types [train, test]')
 flags.DEFINE_string('name', 'x2', 'A name of the model which will be used to construct folder name for weights')
 flags.DEFINE_integer('save_summary_steps', 300, 'Number of steps between saving summary statistics [300]')
@@ -64,7 +64,7 @@ if DATASET == 'image':
     flags.DEFINE_integer('embedding_height', None, 'The height of embedding used in generator/discriminator')
 
 elif 'protein' in DATASET:
-    flags.DEFINE_integer('steps_for_blast', 1200, 'Number of steps between blasting fake protein [1200]')
+    flags.DEFINE_integer('steps_for_blast', 600, 'Number of steps between blasting fake protein [1200]')
     flags.DEFINE_bool('one_hot', True, 'Whether to use one hot encoding [False]')
     flags.DEFINE_integer('embedding_height', 10, 'The height of embedding used in generator/discriminator')
     flags.DEFINE_string('embedding_name', 'prot_fp', 'The height of embedding used in generator/discriminator')

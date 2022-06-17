@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/../congans/.idea/congans.iml" filepath="$PROJECT_DIR$/../congans/.idea/congans.iml" />
       <module fileurl="file://$PROJECT_DIR$/../data/.idea/data.iml" filepath="$PROJECT_DIR$/../data/.idea/data.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/src.iml" filepath="$PROJECT_DIR$/.idea/src.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../to_align/.idea/to_align.iml" filepath="$PROJECT_DIR$/../to_align/.idea/to_align.iml" />
       <module fileurl="file://$PROJECT_DIR$/../weights/.idea/weights.iml" filepath="$PROJECT_DIR$/../weights/.idea/weights.iml" />
     </modules>
   </component>

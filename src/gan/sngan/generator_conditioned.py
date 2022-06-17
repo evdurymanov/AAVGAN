@@ -19,6 +19,8 @@ class GumbelGeneratorCond(Generator):
         strides = [(1, 2), (1, 2), (1, 2), (1, 2)]
         if self.length == 512:
             strides.extend([(1, 2), (1, 2)])
+        elif self.length == 1024:
+            strides.extend([(1, 2), (1, 2)])
         return strides
 
     def network(self, z, labels, reuse):

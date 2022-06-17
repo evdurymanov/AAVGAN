@@ -279,6 +279,7 @@ def snlinear(x, output_size, bias_start=0.0, sn_iters=1, update_collection=None,
       sn_iters: Number of SN iterations. (Default value = 1)
       update_collection: The update collection used in spectral_normed_weight (Default value = None)
       name:  (Default value = 'snlinear')
+      name:  (Default value = 'snlinear')
 
     Returns:
       The linear transoformation of x with spectral normalization

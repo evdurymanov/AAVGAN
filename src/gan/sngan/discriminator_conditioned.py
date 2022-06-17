@@ -12,6 +12,8 @@ class GumbelDiscriminatorCond(Discriminator):
         self.strides = [(1, 2), (1, 2), (1, 2), (1, 2)]
         if self.length == 512:
             self.strides.extend([(1, 2), (1, 2)])
+        elif self.length == 1024:
+            self.strides.extend([(1, 2), (1, 2)])
 
 
 
@@ -29,7 +31,7 @@ class GumbelDiscriminatorCond(Discriminator):
             block_name, dilation_rate, hidden_dim, strides = self.get_block_params(hidden_dim, layer)
             h = self.add_sn_block(h, hidden_dim, block_name, dilation_rate, strides)
             if layer == 0:
-                self.add_attention(h, hidden_dim, reuse)
+                h = self.add_attention(h, hidden_dim, reuse)
             if layer == 2:
                 emb = ops.sn_embedding(labels[0], self.num_classes[0], self.embedding_dimension)
                 H, W = h.shape[2], h.shape[3]

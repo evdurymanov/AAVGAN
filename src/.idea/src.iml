@@ -8,6 +8,7 @@
     <orderEntry type="module" module-name="congans" />
     <orderEntry type="module" module-name="weights" />
     <orderEntry type="module" module-name="PyTorAav" />
+    <orderEntry type="module" module-name="to_align" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="GOOGLE" />
