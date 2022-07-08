@@ -41,7 +41,7 @@ def save_as_tfrecords(filename, data, columns=["sequence"], extension="tfrecords
         with tf.python_io.TFRecordWriter(filename) as writer:
             for index, row in data.iteritems():
                 feature = {
-                    'label': to_int_feature([int(1)])
+                    'label': to_int_feature([int(0)])
                 }
                 for col_name in columns:
                     value = row
@@ -65,12 +65,12 @@ def save_as_tfrecords(filename, data, columns=["sequence"], extension="tfrecords
 
 
 
-data = fasta_to_pandas('500_uniprot_aav__clean.fasta')
-data.to_csv("500_uniprot_aav__clean.csv", sep = "\t")
+data = fasta_to_pandas('up_sampling_dataset/0.fasta')
+data.to_csv("0.csv", sep = "\t")
 data = data[~data["sequence"].str.contains("|".join(NON_STANDARD_AMINO_ACIDS))]
 data = from_amino_acid_to_id(data, "sequence")
 #data.to_csv("vp1_new.csv", sep = "\t")
-save_as_tfrecords('train_cond_1', data)
+save_as_tfrecords('tfrecords/0', data)
 
 """
 data = fasta_to_pandas('uniprot-ec 1.1.1.36 val.fasta')
