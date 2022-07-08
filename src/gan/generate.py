@@ -50,8 +50,6 @@ def generate_sequences():
     with MonitoredSession(session_creator=session_creator, hooks=None) as session:
         while True:
             results, step = session.run([generated_seqs, tf.train.get_global_step()], None)
-            print(results, step)
-            print("lol")
             id = len(seqs)
             for i in range(FLAGS.batch_size):
                 seqs.append(Sequence(id=id + i, seq=results[i]))

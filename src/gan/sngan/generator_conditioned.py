@@ -42,7 +42,6 @@ class GumbelGeneratorCond(Generator):
         # Final conv
         h_act = self.act(self.final_bn(h), name="h_act")
         last = ops.snconv2d(h_act, NUM_AMINO_ACIDS, (1, 1), name='last_conv')
-
         # Gumbel max trick
         out = RelaxedOneHotCategorical(temperature=self.get_temperature(True), logits=last).sample()
         return out

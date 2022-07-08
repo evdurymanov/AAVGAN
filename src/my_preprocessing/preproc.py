@@ -65,12 +65,12 @@ def save_as_tfrecords(filename, data, columns=["sequence"], extension="tfrecords
 
 
 
-data = fasta_to_pandas('up_sampling_dataset/0.fasta')
-data.to_csv("0.csv", sep = "\t")
+data = fasta_to_pandas('up_sampling_dataset/1_1_3000.fasta')
+data.to_csv("1_1_3000.csv", sep = "\t")
 data = data[~data["sequence"].str.contains("|".join(NON_STANDARD_AMINO_ACIDS))]
 data = from_amino_acid_to_id(data, "sequence")
 #data.to_csv("vp1_new.csv", sep = "\t")
-save_as_tfrecords('tfrecords/0', data)
+save_as_tfrecords('tfrecords/1_1_3000', data)
 
 """
 data = fasta_to_pandas('uniprot-ec 1.1.1.36 val.fasta')

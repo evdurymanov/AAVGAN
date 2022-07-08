@@ -9,6 +9,8 @@
     <orderEntry type="module" module-name="weights" />
     <orderEntry type="module" module-name="PyTorAav" />
     <orderEntry type="module" module-name="to_align" />
+    <orderEntry type="module" module-name="t-sne" />
+    <orderEntry type="module" module-name="mmseqs2" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="GOOGLE" />
