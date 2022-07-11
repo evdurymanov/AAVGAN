@@ -65,7 +65,7 @@ class GAN(object):
 
         self.fake_x = self.get_generated_data(self.noise, labels)
         #to_generate = (tf.zeros(64, tf.int32), tf.zeros(64, tf.float32))
-        to_generate = (tf.ones(32, tf.int32), tf.ones(32, tf.float32))
+        to_generate = (tf.zeros(32, tf.int32), tf.zeros(32, tf.float32))
         self.fake_x_to_gen = self.get_generated_data(self.noise, to_generate)
         self.labelz = labels
         # real_x_mixed, fake_x_mixed, labels_mixed = self.random_shuffle(real_x, fake_x, labels, self.config.batch_size,

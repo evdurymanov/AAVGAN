@@ -18,7 +18,7 @@ flags.DEFINE_integer('shuffle_buffer_size', 100000, 'Number of records to load '
 flags.DEFINE_boolean('is_train', True, 'True for training. [default: True]')
 flags.DEFINE_integer('kernel_height', 3, 'The height of the kernel [3]')
 flags.DEFINE_integer('kernel_width', 3, 'The width of the kernel [3]')
-flags.DEFINE_integer('steps', 8000, 'Number of steps to train')
+flags.DEFINE_integer('steps', 50000, 'Number of steps to train')
 flags.DEFINE_string('running_mode', 'train', 'Running types [train, test]')
 flags.DEFINE_string('name', 'x2', 'A name of the model which will be used to construct folder name for weights')
 flags.DEFINE_integer('save_summary_steps', 300, 'Number of steps between saving summary statistics [300]')

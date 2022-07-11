@@ -1,0 +1,1 @@
+{"seq_length": 1024, "min_num_examples": 2, "total_records": 4310, "num_of_classes": 2, "num_examples": {"all": 3696, "aav": 614}, "class_mapping": {"0": "all", "1" : "aav"}}
