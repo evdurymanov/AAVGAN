@@ -40,5 +40,3 @@ SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
 
 # update conda
 RUN conda update -n base -c defaults conda
-RUN condo install -c 
-RUN conda env create -f aavgan/environment_docker.yml

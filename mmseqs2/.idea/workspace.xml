@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2e571d2-46fd-4a9d-bb8f-4e1cf54e610e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/reshuffled_dataset/0_1_30.fasta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reshuffled_dataset/1_1_20.fasta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reshuffled_dataset/1_1_5.fasta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reshuffled_dataset/0_1_1.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/reshuffled_dataset/0_1_1.fasta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reshuffled_dataset/0_1_10.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/reshuffled_dataset/0_1_10.fasta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reshuffled_dataset/0_1_100.fasta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reshuffled_dataset/0_1_5.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/reshuffled_dataset/0_1_5.fasta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reshuffled_dataset/0_1_500.fasta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reshuffled_dataset/1_1_1000.fasta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reshuffled_dataset/1_1_200.fasta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reshuffled_dataset/1_1_3000.fasta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reshuffled_dataset/1_1_50.fasta" beforeDir="false" afterPath="$PROJECT_DIR$/reshuffled_dataset/1_1_50.fasta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reshuffled_dataset/tsv_worker.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/reshuffled_dataset/tsv_worker.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dockerfile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Dockerfile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
